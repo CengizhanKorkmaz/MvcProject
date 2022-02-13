@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concrete.Gallery
+@{
+    ViewBag.Title = "AddGallery";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Resim Ekleme</h2>
+<br />
+@using (Html.BeginForm("AddGallery", "GalleryWeb", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Resim Yol")
+        @Html.TextBoxFor(x => x.GalleryPath, new { @class = "form-control" })
+        
+        <br/>
+
+        <button class="btn btn-success">Ekle</button>
+    </div>
+}
+
+

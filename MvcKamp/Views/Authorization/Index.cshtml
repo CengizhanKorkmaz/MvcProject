@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table  table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı Adı</th>
+        <th>Yetki</th>
+        <th>Durum</th>
+        <th>Güncelle</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <td>@item.UserName</td>
+            <td>@item.Role</td>
+            <td>@item.Status</td>
+       
+            <td><a href="/Authorization/UpdateAdmin/@item.Id" class="btn btn-primary">Bilgileri Güncelle</a></td>
+            
+
+        </tr>
+    }
+</table>
+<br />
+<a href="/Authorization/AddAdmin" class="btn btn-success">Yeni Admin Ekle</a>
